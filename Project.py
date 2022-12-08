@@ -1,19 +1,20 @@
-def nameRank(names, marks, updates, n):
-    x = [[0 for j in range(3)] for i in range(n)]
-    for i in range(n):
-        x[i][0] = names[i]
-        x[i][1]= marks[i] + updates[i]
-        x[i][2] = i + 1
-         
-    highest = x[0]
-    for j in range(1, n):
-        if (x[j][1] >= highest[1]):
-            highest = x[j]
-    print("Name: ", highest[0], ", Jump: ",
-            abs(highest[2] - 1), sep="")
-names= ["sam", "ram", "geek"]
-marks = [80, 79, 75]
-updates = [0, 5, -9]
-n = len(marks)
- 
-nameRank(names, marks, updates, n)
+stg=int(input("Provide strength of the class: "))
+name=[]
+first_term=[]
+second_term=[]
+for i in range(stg):
+    name.append(input("Name of student: ").split(","))
+    for j in range(stg):
+        first_term.append((input("Provide first term mark: ")))
+        break
+    for j in range(stg):
+        second_term.append(input("Provide second term mark: "))
+        break
+
+max_s=max(second_term)
+numb=second_term.index(max_s)
+top=name[numb]
+rank1=first_term[numb]
+sort_f=sorted(first_term , reverse=True)
+rank_f=sort_f.index(rank1)
+print(top,"is the topper ","Jump= ",(rank_f+1)-1)
